@@ -1,0 +1,37 @@
+<% include ../partials/head %>
+
+	<% include ../partials/header %>
+  <div id="content">
+  <div class="topnav" id="myTopnav">
+   <a href="index.html">Home</a>
+  <a class="selected" href="asif.html">Asif</a>
+  <a href="laila.html">Laila</a>
+  <a href="ahil.html">Ahil</a>
+  <a href="ruhee.html">Ruhee</a>
+   <a href="grandparents.html">Grandparents</a>
+  <a href="vacation.html">Vacation</a>
+  <a id= "contactus" href="contactUs.html">Contact Us</a>
+  
+  
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+		<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+<h1>Asif</h1>
+<img src= "images/asif.jpg" alt = "Asif">
+<p> I am the responsbile one, dealing with wife and two kids. I was born in karachi, pakistan.
+ I attended Sultan Mohammed Shah Aga Khan school and then graduated from NED university studying 
+ Computer Science. I came to US and finsih my graduate studies in Computer Science from University of 
+ illinois. I have lived in Chicago IL, Stroudsburg PA, Edison NJ and Somerset NJ. I like to play tennis and t
+ ry to play atleast once a week. I am beginer skier and try to get out few times a year. I would love to 
+ increase the time I spend on voluntary service.</p>
+ 
+ <% include ../partials/footer %>
