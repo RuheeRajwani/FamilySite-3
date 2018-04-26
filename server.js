@@ -1,9 +1,15 @@
 // server.js
 // load the things we need
+const db = require('./db');
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 var path = require('path')
+const mongodb = require('mongodb')
+const MongoClient = mongodb.MongoClient
 
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -48,7 +54,27 @@ app.get('/vacation.html', function (req, res) {
     res.render('pages/vacation', { menu: pageMenu });
 });
 
+app.post('/contactUsSubmit', function (req, res) {
+    let contact = {
+        fname: req.body.firstname,
+        lname: req.body.lastname,
+        familyMember: req.body.familyMember,
+        message: req.body.message
+    }
+    let pageMenu = getPageMenu("contactus")
+    db.addContact(contact
+        , (error, result) => {
+            if (error) {
+                console.log('Error inserting to db ' + error);
+                res.render('pages/contactUsSubmit', { menu: pageMenu, contact: contact, isSuccess: false })
+            }
+            else {
+                res.render('pages/contactUsSubmit', { menu: pageMenu, contact: contact, isSuccess: true })
+            }
+        }
+    )
 
+})
 app.get('/ahil.html', function (req, res) {
     let pageMenu = getPageMenu("ahil");
     res.render('pages/ahil', { menu: pageMenu });
@@ -80,3 +106,4 @@ const getPageMenu = (page) => {
 
     return pageMenu;
 }
+
