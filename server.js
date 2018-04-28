@@ -24,32 +24,32 @@ app.get('/', function (req, res) {
 });
 
 
-app.get('/index.html', function (req, res) {
+app.get('/index', function (req, res) {
     let pageMenu = getPageMenu("index");
     res.render('pages/index', { menu: pageMenu });
 
 });
-app.get('/asif.html', function (req, res) {
+app.get('/asif', function (req, res) {
     let pageMenu = getPageMenu("asif");
     res.render('pages/asif', { menu: pageMenu });
 });
-app.get('/contactUs.html', function (req, res) {
+app.get('/contactUs', function (req, res) {
     let pageMenu = getPageMenu("contactus");
     res.render('pages/contactUs', { menu: pageMenu });
 });
-app.get('/grandparents.html', function (req, res) {
+app.get('/grandparents', function (req, res) {
     let pageMenu = getPageMenu("grandparents");
     res.render('pages/grandparents', { menu: pageMenu });
 });
-app.get('/laila.html', function (req, res) {
+app.get('/laila', function (req, res) {
     let pageMenu = getPageMenu("laila");
     res.render('pages/laila', { menu: pageMenu });
 });
-app.get('/ruhee.html', function (req, res) {
+app.get('/ruhee', function (req, res) {
     let pageMenu = getPageMenu("ruhee");
     res.render('pages/ruhee', { menu: pageMenu });
 });
-app.get('/vacation.html', function (req, res) {
+app.get('/vacation', function (req, res) {
     let pageMenu = getPageMenu("vacation");
     res.render('pages/vacation', { menu: pageMenu });
 });
@@ -75,7 +75,7 @@ app.post('/contactUsSubmit', function (req, res) {
     )
 
 })
-app.get('/ahil.html', function (req, res) {
+app.get('/ahil', function (req, res) {
     let pageMenu = getPageMenu("ahil");
     res.render('pages/ahil', { menu: pageMenu });
 });
@@ -84,14 +84,14 @@ console.log('8080 is the magic port');
 
 const getMenu = () => {
     let menu = [
-        { id: "index", href: "index.html", display: "Home", isSelected: false },
-        { id: "asif", href: "asif.html", display: "Asif", isSelected: false },
-        { id: "laila", href: "laila.html", display: "Laila", isSelected: false },
-        { id: "ahil", href: "ahil.html", display: "Ahil", isSelected: false },
-        { id: "ruhee", href: "ruhee.html", display: "Ruhee", isSelected: false },
-        { id: "grandparents", href: "grandparents.html", display: "Grandparents", isSelected: false },
-        { id: "vacation", href: "vacation.html", display: "Vacation", isSelected: false },
-        { id: "contactus", href: "contactUs.html", display: "Contact Us", isSelected: false }
+        { id: "index", href: "index", display: "Home", isSelected: false },
+        { id: "asif", href: "asif", display: "Asif", isSelected: false },
+        { id: "laila", href: "laila", display: "Laila", isSelected: false },
+        { id: "ahil", href: "ahil", display: "Ahil", isSelected: false },
+        { id: "ruhee", href: "ruhee", display: "Ruhee", isSelected: false },
+        { id: "grandparents", href: "grandparents", display: "Grandparents", isSelected: false },
+        { id: "vacation", href: "vacation", display: "Vacation", isSelected: false },
+        { id: "contactus", href: "contactUs", display: "Contact Us", isSelected: false }
     ]
     return menu;
 }
