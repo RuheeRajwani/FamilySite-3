@@ -12,7 +12,8 @@ Changes from version 1:
 
 Changes from version 2:
 1. Contact us details are stored in Mongodb (database: familySiteDb , collection: contact )
-2. I used Mongoui to view content of database, it can be installed using
+2. Ability to run without mongodb by passing appropiate parameter
+3. I used Mongoui to view content of database, it can be installed using
 
     npm i -g mongoui
   
@@ -24,4 +25,7 @@ To run do the following:
 2. start Mongodb
 3. node server.js
 
+To run without Mongodb do the following:
+1. npm install
+2. node server.js --db off
 

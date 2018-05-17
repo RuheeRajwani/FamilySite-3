@@ -7,6 +7,9 @@ var app = express();
 var path = require('path')
 const mongodb = require('mongodb')
 const MongoClient = mongodb.MongoClient
+const request = require('request');
+
+
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,6 +21,7 @@ app.set('views', path.join(__dirname, '/public/views'))
 // use res.render to load up an ejs view file
 
 // index page 
+
 app.get('/', function (req, res) {
     let pageMenu = getPageMenu("index");
     res.render('pages/index', { menu: pageMenu });
